@@ -4,13 +4,14 @@
 export students=$(nbgrader db student list 2> /dev/null | tail -n +2 | awk '{print $1}')
 
 
-# make user home directories if not already made, and add students to nbgrader if not already there.
 while read -r username; do
     if [ ! -f "/home/$username" ]; then
+    # make user home directories if not already made
         mkdir "/home/$username"
         chown "$username:$username" "/home/$username"
         chmod 700 "/home/$username"
     fi
+    # add users to nbgrader if not already in database
     if [[ ! $students == *$username* ]]; then
         nbgrader db student add $username
     fi
