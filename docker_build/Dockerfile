@@ -5,6 +5,7 @@ RUN pip install numpy sympy scipy scikit-learn meclib pint pandas matplotlib plo
 
 # Copy global jupyterhub configs to working directory (/srv/jupyterhub)
 COPY jupyterhub_config/jupyterhub_config.py .
+COPY jupyterhub_config/course_name .
 COPY jupyterhub_config/nbgrader_config.py /etc/jupyter/nbgrader_config.py
 
 # set up nbgrader

@@ -17,8 +17,14 @@ while read -r username; do
     fi
 done < /srv/jupyterhub/usernames
 
-# copy over nbgrader configs
-if [ ! -f "/home/instructor/.jupyter" ]; then
+# set up instructor
+if [ ! -f "/home/instructor/logfile.txt" ]; then
+    touch /home/instructor/logfile.txt
+fi
+if [ ! -d "/home/instructor/$(cat /srv/jupyterhub/course_name)" ]; then
+    mkdir -p /home/instructor/$(cat /srv/jupyterhub/course_name)
+fi
+if [ ! -d "/home/instructor/.jupyter" ]; then
     mkdir -p /home/instructor/.jupyter
     cp /etc/jupyter/nbgrader_config.py /home/instructor/.jupyter/.
 fi
