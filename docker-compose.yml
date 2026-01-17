@@ -3,7 +3,7 @@ services:
     image: jupyterhub_img
     build: ./docker_build
     ports:
-      - 8000:8000
+      - 8350:8000
     volumes:
       - ./data/home:/home
     # entrypoint: ["/srv/jupyterhub/entrypoint.sh"]
