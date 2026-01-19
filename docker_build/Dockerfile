@@ -9,9 +9,8 @@ COPY jupyterhub_config/course_name .
 COPY jupyterhub_config/nbgrader_config.py /etc/jupyter/nbgrader_config.py
 
 # set up nbgrader
-RUN mkdir -p /srv/nbgrader/exchange
+RUN mkdir -p /srv/nbgrader/
 RUN chmod 777 /srv/nbgrader
-RUN chmod 777 /srv/nbgrader/exchange
 
 # Configure users
 COPY users users
