@@ -6,4 +6,5 @@ services:
       - 8350:8000
     volumes:
       - ./data/home:/home
+      - ./data/exchange:/srv/nbgrader/exchange
     # entrypoint: ["/srv/jupyterhub/entrypoint.sh"]

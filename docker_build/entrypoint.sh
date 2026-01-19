@@ -24,9 +24,9 @@ while read -r username; do
     # make user home directories if not already made
     if [ ! -d "/home/$username" ]; then
         mkdir "/home/$username"
-        chown -R "$username:$username" "/home/$username"
-        chmod 700 "/home/$username"
     fi
+    chown -R "$username:$username" "/home/$username"
+    chmod 777 "/home/$username"
     # add users to nbgrader if not already in database
     if [[ ! $students == *$username* ]]; then
         nbgrader db student add $username
