@@ -33,5 +33,11 @@ while read -r username; do
     fi
 done < /srv/jupyterhub/usernames
 
+# change permissions on bgrader exchange directory
+if [ ! -d /srv/nbgrader/exchange ]; then
+    mkdir -p /srv/nbgrader/exchange
+fi
+chmod 777 /srv/nbgrader/exchange
+
 # start jupyterhub
 jupyterhub -f /srv/jupyterhub/jupyterhub_config.py
