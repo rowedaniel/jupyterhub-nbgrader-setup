@@ -3,7 +3,7 @@ services:
     image: jupyterhub_img
     build: ./docker_build
     ports:
-      - 8350:8000
+      - 8150:8000
     volumes:
       - ./data/home:/home
       - ./data/exchange:/srv/nbgrader/exchange

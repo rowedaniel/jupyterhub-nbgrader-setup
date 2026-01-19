@@ -1,7 +1,7 @@
 FROM quay.io/jupyterhub/jupyterhub:5.4.3
 
 RUN pip install jupyter jupyter-server nbgrader nbconvert
-RUN pip install numpy sympy scipy scikit-learn meclib pint pandas matplotlib plotly
+RUN pip install numpy sympy scipy scikit-learn meclib pchemlibrary pint pandas matplotlib plotly
 
 # Copy global jupyterhub configs to working directory (/srv/jupyterhub)
 COPY jupyterhub_config/jupyterhub_config.py .
